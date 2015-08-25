@@ -3,6 +3,20 @@ Solutions to all the exercises in Threads-1
 
 ## Textual answers to the questions in the exercises:
 
+##Exercise 2 (Race condition)
+
+**Question**: Explain what happens?
+
+**Answer**: What happens is that since the Even.next() method is NOT atomic, part of the 
+    increments can occur in both threads, whhich means that when one thread
+    is done with its call to Even.next() another thread might be incrementing
+    its value at the same time. This could result in various increments from 0 
+    up till 4 before the next test is done! this is also the cause of uneven numbers.
+
+**Question**: How common is the problem?
+
+**Answer**: I would say that it is very common. In every multithreaded application, we must remember to protect our data with synchronization. :)
+
 ##Exercise 3 (Blocking the GUI-thread)
 
 **Question**: What is the obvious problem with this solution?
